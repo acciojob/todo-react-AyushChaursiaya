@@ -1,4 +1,3 @@
-
 import React from "react";
 import './../styles/App.css';
 
@@ -17,22 +16,27 @@ const App = () => {
   }
 
   const handleInputDelete = (index) => {
-      const updatedTasks = [...lestTask];
-      updatedTasks.splice(index, 1);
-      setLestTask(updatedTasks);
+    const updatedTasks = [...lestTask];
+    updatedTasks.splice(index, 1);
+    setLestTask(updatedTasks);
   }
 
 
   return (
-    <div>
-      <input type="text" value={input} onChange={handleInput} />
-      <button onClick={handleInputAdd}>Abb Todo</button>
-      <ul>{lestTask.map((text, index) => {
-        <li key={index}>
-          {text}
-          <button onClick={() => handleInputDelete(index)}>Delete</button>
+    <div className="container">
+      <h1>To Do List</h1>
+      <div className="testInput">
+        <input type="text" value={input} input={input} onChange={handleInput} />
+        <button onClick={handleInputAdd}>Abb Todo</button>
+      </div>
+      <ul className="cards">
+        {lestTask.map((text, index) => {
+          <li key={index}>
+            {text}
+            <button onClick={() => handleInputDelete(index)} className="delete">Delete</button>
           </li>
-      })}</ul>
+        })}
+      </ul>
     </div>
   )
 }
