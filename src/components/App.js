@@ -26,7 +26,7 @@ const App = () => {
     <div className="container">
       <h1>To Do List</h1>
       <div className="testInput">
-        <input type="text" value={input} input={input} onChange={handleInput} />
+        <input type="text" value={input} onChange={handleInput} />
         <button onClick={handleInputAdd}>Abb Todo</button>
       </div>
       <ul className="cards">
